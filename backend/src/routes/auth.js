@@ -1,11 +1,12 @@
 import express from "express";
-import { login, generateCode } from "../controller/auth.js";
+import { login, generateCode, createUser } from "../controller/auth.js";
 
 const router = express.Router()
 
 
-router.post('/login/:email', login)
-router.post('/login/:email/code', generateCode)
+router.get('/login/:email', login)
+router.get('/login/:email/code', generateCode)
+router.post('/createUser', createUser)
 
 
 export default router

@@ -1,4 +1,4 @@
-import mongoose from 'mongodb';
+import mongoose from "mongoose";
 
 
 async function connectDB() {
@@ -7,7 +7,6 @@ async function connectDB() {
     }
     try{
         await mongoose.connect(process.env.MONGODB_URL)
-        console.log('Conexion exitosa');
         console.log('Conexion exitosa');
     }catch(error){
         console.log('error al conectar con db');
