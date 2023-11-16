@@ -1,6 +1,6 @@
 import React from "react";
 
-
+import axios from 'axios';
 import { useForm } from 'react-hook-form'
 import {
   FormErrorMessage,
@@ -30,9 +30,29 @@ return (
     <div>
         <form onSubmit={handleSubmit(onSubmit)}> 
             <Card padding={5} borderColor={"ActiveBorder"} borderRadius={"revert"} >
-                <Heading textAlign={"initial"} >Inicio de sesion</Heading>
+                <Heading textAlign={"initial"} >Crear usuario</Heading>
                 <FormControl>
-                    <FormLabel>email</FormLabel>
+                    <FormLabel>Nombre</FormLabel>
+                    <Input
+                    type="text"
+                    placeholder='Nombre'
+                    {...register('Nombre')}
+                    />
+                    <FormErrorMessage>
+                    </FormErrorMessage>
+                </FormControl>
+                <FormControl>
+                    <FormLabel>Apellido</FormLabel>
+                    <Input
+                    type="text"
+                    placeholder='Apellido'
+                    {...register('Apellido')}
+                    />
+                    <FormErrorMessage>
+                    </FormErrorMessage>
+                </FormControl>
+                <FormControl>
+                    <FormLabel>Email</FormLabel>
                     <Input
                     type="text"
                     placeholder='ingresa tu email'
@@ -42,21 +62,40 @@ return (
                     </FormErrorMessage>
                 </FormControl>
                 <FormControl>
-                    <FormLabel>code</FormLabel>
+                    <FormLabel>Password</FormLabel>
                     <Input
                     type="text"
-                    placeholder='code'
-                    {...register('code')}
+                    placeholder='Password'
+                    {...register('Password')}
+                    />
+                    <FormErrorMessage>
+                    </FormErrorMessage>
+                </FormControl>
+                <FormControl>
+                    <FormLabel>Rol</FormLabel>
+                    <Input
+                    type="text"
+                    placeholder='User o Admin'
+                    {...register('rol')}
                     />
                     <FormErrorMessage>
                     </FormErrorMessage>
                 </FormControl>
                 <ButtonGroup>
-                    <Button onClick={()=> console.log({value : getValues()})} mt={4} colorScheme='teal' type='submit'>
-                        Iniciar sesion
-                    </Button>
-                    <Button mt={4} colorScheme='teal' type='submit'>
-                        Olvide mi contraseña
+                    <Button mt={4} colorScheme='teal' type='submit' onClick={()=> {
+                        const usuario = getValues()
+                        console.log(usuario);
+                        axios.post('http://localhost:8080/api/auth/createUser', usuario)
+                            .then(response => {
+                                // Manejar la respuesta del servidor si es necesario
+                                console.log('Usuario creado:', response.data);
+                            })
+                            .catch(error => {
+                                // Manejar cualquier error que pueda ocurrir durante la solicitud
+                                console.error('Error al crear el usuario:', error);
+                            });
+                    }}>
+                        Crear
                     </Button>
                 </ButtonGroup>
             </Card>
