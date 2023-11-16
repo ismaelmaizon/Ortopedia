@@ -2,7 +2,7 @@ import React from "react";
 
 import axios from 'axios';
 import { useForm } from 'react-hook-form'
-import { Box, Center, Flex, Grid, GridItem } from '@chakra-ui/react'
+import { Box, Center, Flex, Grid, GridItem, Icon, Input } from '@chakra-ui/react'
 import './navBar.css'
 
 export default function Navbar() {
@@ -16,9 +16,11 @@ return (
                 </GridItem>
                 <GridItem w='100%'>
                     <Grid m='2px, 50px' templateColumns='repeat(3, 1fr)' gap={100} >
-                        <GridItem display={"flex"} justifySelf={"initial"} >nombre secre/dr</GridItem>
-                        <GridItem display={"flex"} justifySelf={"center"} >buscar</GridItem>
-                        <GridItem display={"flex"} justifySelf={"end"} >fecha</GridItem>
+                        <GridItem display={"flex"} ml='40px' justifySelf={"initial"} >nombre secre/dr</GridItem>
+                        <GridItem display={"flex"} justifySelf={"center"} >
+                            <Input backgroundColor={"white"} placeholder="Buscar paciente" w='500px' ></Input>
+                        </GridItem>
+                        <GridItem display={"flex"} mr='40px' justifySelf={"end"} >fecha</GridItem>
                     </Grid>
                 </GridItem>
             </Grid>
