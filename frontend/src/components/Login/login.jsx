@@ -29,7 +29,7 @@ console.log(reg);
 return (
     <div>
         <form onSubmit={handleSubmit(onSubmit)}> 
-            <Card padding={5} borderColor={"ActiveBorder"} borderRadius={"revert"} >
+            <Card margin={50} padding={50} borderColor={"ActiveBorder"} borderRadius={"revert"} >
                 <Heading textAlign={"initial"} >Crear usuario</Heading>
                 <FormControl>
                     <FormLabel>Nombre</FormLabel>
@@ -38,8 +38,6 @@ return (
                     placeholder='Nombre'
                     {...register('Nombre')}
                     />
-                    <FormErrorMessage>
-                    </FormErrorMessage>
                 </FormControl>
                 <FormControl>
                     <FormLabel>Apellido</FormLabel>
@@ -48,8 +46,6 @@ return (
                     placeholder='Apellido'
                     {...register('Apellido')}
                     />
-                    <FormErrorMessage>
-                    </FormErrorMessage>
                 </FormControl>
                 <FormControl>
                     <FormLabel>Email</FormLabel>
@@ -58,8 +54,6 @@ return (
                     placeholder='ingresa tu email'
                     {...register('email')}
                     />
-                    <FormErrorMessage>
-                    </FormErrorMessage>
                 </FormControl>
                 <FormControl>
                     <FormLabel>Password</FormLabel>
@@ -68,8 +62,6 @@ return (
                     placeholder='Password'
                     {...register('Password')}
                     />
-                    <FormErrorMessage>
-                    </FormErrorMessage>
                 </FormControl>
                 <FormControl>
                     <FormLabel>Rol</FormLabel>
@@ -78,8 +70,6 @@ return (
                     placeholder='User o Admin'
                     {...register('rol')}
                     />
-                    <FormErrorMessage>
-                    </FormErrorMessage>
                 </FormControl>
                 <ButtonGroup>
                     <Button mt={4} colorScheme='teal' type='submit' onClick={()=> {
