@@ -13,3 +13,16 @@
   width: 100%;
   padding: 50px;
 }
+
+
+.conteiner_Dr{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.conteiner_Dr2{
+  font-size: 25px;
+  margin-bottom: 30px ;
+}

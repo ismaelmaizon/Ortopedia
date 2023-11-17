@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import './App.css'
-import { Box, Button, ButtonGroup, Stack, Wrap, WrapItem } from '@chakra-ui/react'
 import {Route, Routes} from 'react-router-dom'
-import Login from './components/Login/login'
+import CreteUser from './components/CreateUser/createUser'
 import NavBar from './components/Navbar/navbar'
 import Secretariado from './components/Secretariado/secretariado'
+import ProfesionalHC from './components/Profecional/ProfesionalHC/profesionalHC'
+import Profesional from './components/Profecional/profesional'
 
 
 function App() {
@@ -13,11 +14,13 @@ function App() {
         <NavBar/>
         <div className='container_body' >
           <Routes>
-            <Route path="/Login"  element= { <Login/> } ></Route>
+            <Route path="/CreteUser"  element= { <CreteUser/> } ></Route>
             <Route path="/Secretariado"  element= { <Secretariado/> } ></Route>
+            <Route path="/Profesional"  element= { <Profesional/> } ></Route>
+            <Route path="/Profesional/HC"  element= { <ProfesionalHC/> } ></Route>
           </Routes>
         </div>
-      </div>
+    </div>
   )
 }
 

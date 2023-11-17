@@ -10,7 +10,8 @@ import {
   Button,Card, CardHeader, CardBody, CardFooter, ButtonGroup, Heading
 } from '@chakra-ui/react'
 
-export default function Login() {
+export default function CreteUser() {
+    
 const {handleSubmit,register, getValues} = useForm()
 
 function onSubmit(values) {
