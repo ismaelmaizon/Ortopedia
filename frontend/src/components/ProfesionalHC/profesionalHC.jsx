@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Button, Card, FormControl, FormErrorMessage, FormLabel, Grid, GridItem, Input, Table, TableCaption, TableContainer, Tbody, Td, Tfoot, Th, Thead, Tr, flexbox, space } from '@chakra-ui/react';
 import './profesionalHC.css'
 import { useForm } from 'react-hook-form';
+import { Link } from 'react-router-dom';
 
 export default function ProfesionalHC() {
 const {
@@ -18,15 +19,15 @@ const {
         resolve()
         }, 3000)
     })
-    }    
+}    
 
-const profesional = 'HC'
+const profesional = 'Abrir HC'
 
 return (
     <div className='profesional'>
         <div className='profesional_container1'>
-            <div className='secretariado_header'>
-                <h2 className='secretariado_header_title' >Paciente</h2>
+            <div className='profesional_container1_title'>
+                <h2>Nueva Evolucion</h2>
             </div>
             
             <form onSubmit={handleSubmit(onSubmit)} className='profesional_form' >
@@ -71,19 +72,32 @@ return (
                     <FormErrorMessage>
                         {errors.name && errors.name.message}
                     </FormErrorMessage>
+                    <FormLabel htmlFor='name'>Documento PDF</FormLabel>
+                    <Input
+                    type='file'
+                    backgroundColor={'white'}
+                    id='name'
+                    placeholder='Descripcion del problema'
+                    {...register('name', {
+                        required: 'This is required',
+                        minLength: { value: 4, message: 'Minimum length should be 4' },
+                    })}
+                    />
+                    <FormErrorMessage>
+                        {errors.name && errors.name.message}
+                    </FormErrorMessage>
                 </FormControl>
                 
             </form>
-            <Grid m='2px, 50px' templateColumns='repeat(3, 1fr)' gap={100} >
+            <Grid m='2px, 50px' templateColumns='repeat(2, 1fr)' gap={100} >
                     <Button mt={4} colorScheme='teal' isLoading={isSubmitting} type='submit'>
-                        guardar
+                        crear nueva evolucion
                     </Button>
-                    <Button mt={4} colorScheme='teal' isLoading={isSubmitting} type='submit'>
-                        cancelar
-                    </Button>
-                    <Button mt={4} colorScheme='teal' isLoading={isSubmitting} type='submit'>
-                        modificar
-                    </Button>
+                    <Link to='/HC'>
+                        <Button mt={4} colorScheme='teal' isLoading={isSubmitting} type='submit'>
+                            cancelar
+                        </Button>
+                    </Link>
             </Grid>
         </div>
         <div className='profesional_container2'>

@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form'
 import { Box, Center, Flex, FormControl, Grid, GridItem, Icon, IconButton, Input } from '@chakra-ui/react'
 import './navBar.css'
 import { SearchIcon } from '@chakra-ui/icons'
+import { Link } from "react-router-dom";
 
 
 
@@ -26,9 +27,11 @@ console.log(handleSubmit());
 
 return (
         <div className="navBar" >
-            <Grid h='150px' w='100%' templateRows='repeat(20px, 10px)' alignItems={"center"}>
+            <Grid h='100px' w='100%' alignItems={"center"}>
                 <GridItem w='300px' m='auto' >
-                    Centro Pie Cordoba
+                    <Link to='/Secretariado'>
+                        Centro Pie Cordoba
+                    </Link>
                 </GridItem>
                 <GridItem w='100%'>
                     <Grid m='2px, 50px' templateColumns='repeat(3, 1fr)' gap={100} >

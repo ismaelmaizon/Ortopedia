@@ -1,0 +1,19 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.title_1{
+    margin: auto;
+    margin-bottom: 15px;
+    font-size: 50px;
+}
+
+.title_2{
+    color: white;
+    background-color: #0394cb;
+    border-radius: 10px;
+    width: 100%;
+}
