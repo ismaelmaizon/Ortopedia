@@ -41,7 +41,7 @@ return (
             <Grid templateRows={'repeat(25% 25% 25% 25%)'}  fontSize='40px' w='70%' m={"auto"} > 
                 <h2 className='title_2'>Datos Personales (obligatorios)</h2>
                 <Grid margin={25} padding={25} borderColor={"ActiveBorder"} borderRadius={"revert"} templateColumns={'repeat(2, 1fr)'} >
-                    <FormControl w='70%' mb={25} display={"flex"} >
+                <FormControl w='70%' mb={10} display={"flex"} flexDirection={"column"}>
                         <FormLabel>Nombre</FormLabel>
                         <Input
                         type="text"
@@ -50,7 +50,7 @@ return (
                         {...register('Nombre')}
                         />
                     </FormControl>
-                    <FormControl w='70%' mb={25} display={"flex"} >
+                    <FormControl w='70%' mb={10} display={"flex"} flexDirection={"column"}>
                         <FormLabel>Apellido</FormLabel>
                         <Input
                         type="text"
@@ -60,7 +60,7 @@ return (
                         {...register('Apellido')}
                         />
                     </FormControl>
-                    <FormControl w='70%' mb={25} display={"flex"} >
+                    <FormControl w='70%' mb={10} display={"flex"} flexDirection={"column"}>
                         <FormLabel>Cel</FormLabel>
                         <Input
                         type="number"
@@ -70,7 +70,17 @@ return (
                         {...register('Cel')}
                         />
                     </FormControl>
-                    <FormControl w='70%' mb={25} display={"flex"} >
+                    <FormControl w='70%' mb={10} display={"flex"} flexDirection={"column"}>
+                        <FormLabel>Email</FormLabel>
+                        <Input
+                        type="number"
+                        placeholder='ingrese e mail'
+                        backgroundColor='white'
+
+                        {...register('Email')}
+                        />
+                    </FormControl>
+                    <FormControl w='70%' mb={10} display={"flex"} flexDirection={"column"}>
                         <FormLabel>Fecha De Nacimiento</FormLabel>
                         <Input
                         type="datetime-local"
@@ -80,7 +90,7 @@ return (
                         {...register('Nacimiento')}
                         />
                     </FormControl>
-                    <FormControl w='70%' mb={25} display={"flex"} >
+                    <FormControl w='70%' mb={10} display={"flex"} flexDirection={"column"}>
                         <FormLabel>Ocupacion</FormLabel>
                         <Input
                         type="text"
@@ -90,21 +100,19 @@ return (
                         {...register('Ocupacion')}
                         />
                     </FormControl>
-                    <FormControl w='70%' mb={25}>
-                        <FormLabel>Genero</FormLabel>
-                            <RadioGroup onChange={setValue} val={val}>
-                                <Stack direction='row'>
-                                    <Radio val='Masculino' backgroundColor='white'>M</Radio>
-                                    <Radio val='Femenino' backgroundColor='white' >F</Radio>
-                                    <Radio val='Otro' backgroundColor='white' >otro</Radio>
-                                </Stack>
-                            </RadioGroup>
+                    <FormControl w='70%' mb={10} display={"flex"} flexDirection={"column"}>
+                        <FormLabel display={"flex"}>Genero</FormLabel>
+                        <Select backgroundColor='white' placeholder='Select option' {...register('Genero')}>
+                            <option value='Masculino'>Masculino</option>
+                            <option value='Femenino'>Femenino</option>
+                            <option value='Otro'>Otro</option>
+                        </Select>
                     </FormControl>
                 </Grid> 
 
                 <h2 className='title_2'>Datos Medicos</h2>
                 <Grid margin={25} padding={25} borderColor={"ActiveBorder"} borderRadius={"revert"} templateColumns={'repeat(2, 1fr)'} >    
-                    <FormControl w='70%' mb={25} display={"flex"} >
+                <FormControl w='70%' mb={10} display={"flex"} flexDirection={"column"}>
                         <FormLabel>Peso</FormLabel>
                         <Input
                         type="text"
@@ -114,7 +122,7 @@ return (
                         {...register('Peso')}
                         />
                     </FormControl>
-                    <FormControl w='70%' mb={25} display={"flex"} >
+                    <FormControl w='70%' mb={10} display={"flex"} flexDirection={"column"}>
                         <FormLabel>Altura</FormLabel>
                         <Input
                         type="text"
@@ -124,7 +132,7 @@ return (
                         {...register('Altura')}
                         />
                     </FormControl>
-                    <FormControl w='70%' mb={25} display={"flex"} >
+                    <FormControl w='70%' mb={10} display={"flex"} flexDirection={"column"}>
                         <FormLabel>Calzado habitual</FormLabel>
                         <Input
                         type="text"
@@ -134,71 +142,21 @@ return (
                         {...register('Calzado')}
                         />
                     </FormControl>
-                    <FormControl w='70%' mb={25} display={"flex"} >
-                        <FormLabel htmlFor='isRequired' display={"flex"} >Alergia</FormLabel>
-                        <Switch id='isRequired' isRequired display={"flex"} />
-
+                    <FormControl w='70%' mb={10} display={"flex"} flexDirection={"column"}>
+                        <FormLabel display={"flex"}>Alergia</FormLabel>
+                            <Select backgroundColor='white' placeholder='Select option' {...register('Alergia')} >
+                                <option value1='Si'>Si</option>
+                                <option value1='No'>No</option>
+                            </Select>
                     </FormControl>
-                    <FormControl w='70%' mb={25} display={"flex"} >
-                        <FormLabel htmlFor='isRequired' display={"flex"}>Diabetes</FormLabel>
-                        <Switch id='isRequired' isRequired display={"flex"}/>
-
+                    <FormControl w='70%' mb={10} display={"flex"} flexDirection={"column"}>
+                        <FormLabel display={"flex"}>Diabetes</FormLabel>
+                            <Select backgroundColor='white' placeholder='Select option' {...register('Diabetes')} >
+                                <option value1='Si'>Si</option>
+                                <option value1='No'>No</option>
+                            </Select>
                     </FormControl>
-                    <FormControl w='70%' mb={25} display={"flex"} >
-                            <FormLabel htmlFor='isRequired' display={"flex"}>Hipertension Arterial</FormLabel>
-                            <Switch id='isRequired' isRequired />
-                            <FormLabel htmlFor='isRequired' marginLeft='25px' display={"flex"} >Controlada?
-                                <div>
-                                    <Stack spacing={5} direction='row'>
-                                        <Checkbox isDisabled>Checkbox</Checkbox>
-                                        <Checkbox isDisabled defaultChecked>Checkbox</Checkbox>
-                                    </Stack>     
-                                </div>
-                            </FormLabel>
-
-                    </FormControl>
-                    <FormControl w='70%' mb={25} display={"flex"} >
-                        <FormLabel display={"flex"}>Toma Medicacion</FormLabel>
-                        <Input
-                        type="text"
-                        placeholder='ingresa tu email'                    
-                        backgroundColor='white'
-
-                        {...register('Medicacion')}
-                        />
-                    </FormControl>
-                    <FormControl w='70%' mb={25} display={"flex"} >
-                        <FormLabel display={"flex"}>Piel</FormLabel>
-                    
-                        <Select backgroundColor='white' placeholder='Select option'  {...register(`${value}`)}>
-                            <option value='Normal'>Normal</option>
-                            <option value='Seca'>Seca</option>
-                            <option value='Hiperhidrasis'>Hiperhidrasis</option>
-                            <option value='Eromhidrasis'>Eromhidrasis</option>
-                        </Select>
-
-                    </FormControl>
-                    <FormControl w='70%' mb={25} display={"flex"} >
-                        <FormLabel display={"flex"}>Temperatura</FormLabel>
-                        <Input
-                        type="text"
-                        placeholder='ingresa tu email'                    
-                        backgroundColor='white'
-
-                        {...register('Temperatura')}
-                        />
-                    </FormControl>
-                    <FormControl w='70%' mb={25} display={"flex"} >
-                        <FormLabel>Pulso</FormLabel>
-                        <Input
-                        type="text"
-                        placeholder='ingresa tu email'                    
-                        backgroundColor='white'
-
-                        {...register('Pulso')}
-                        />
-                    </FormControl>
-                    <FormControl w='70%' mb={25} display={"flex"} >
+                    <FormControl w='70%' mb={10} display={"flex"} flexDirection={"column"}>
                         <FormLabel display={"flex"}>Presion Arterial</FormLabel>
                         <Input
                         type="text"
@@ -208,15 +166,69 @@ return (
                         {...register('PArterial')}
                         />
                     </FormControl>
-                    <FormControl w='70%' mb={25} display={"flex"} >
+                    <FormControl w='70%' mb={10} display={"flex"} flexDirection={"column"}>
+                        <FormLabel display={"flex"}>Toma Medicacion</FormLabel>
+                        <Select backgroundColor='white' placeholder='Select option' {...register('Medicacion')} mt={-5}>
+                                <option value1='Si'>Si</option>
+                                <option value1='No'>No</option>
+                        </Select>
+                        <FormLabel display={"flex"} mt={2} >¿Cual?</FormLabel>
+                        <Input 
+                        type="text"
+                        placeholder='¿Cual?'                    
+                        backgroundColor='white'
+
+                        {...register('MedicacionCual')}/>
+                        
+                    </FormControl>
+                    <FormControl w='70%' mb={10} display={"flex"} flexDirection={"column"}>
+                        <FormLabel display={"flex"}>Piel</FormLabel>
+                            <Select backgroundColor='white' placeholder='Select option' {...register('Piel')} mt={-5}>
+                                <option value1='Normal'>Normal</option>
+                                <option value1='Seca'>Seca</option>
+                                <option value1='Hiperhidrasis'>Hiperhidrasis</option>
+                                <option value1='Eromhidrasis'>Eromhidrasis</option>
+                            </Select>
+                    </FormControl>
+                    <FormControl w='70%' mb={10} display={"flex"} flexDirection={"column"}>
+                        <FormLabel display={"flex"}>Temperatura</FormLabel>
+                        <Input
+                        type="text"
+                        placeholder='ingresa tu email'                    
+                        backgroundColor='white'
+
+                        {...register('Temperatura')}
+                        />
+                    </FormControl>
+                    <FormControl w='70%' mb={10} display={"flex"} flexDirection={"column"}>
+                        <FormLabel>Pulso</FormLabel>
+                        <Input
+                        type="text"
+                        placeholder='ingresa tu email'                    
+                        backgroundColor='white'
+
+                        {...register('Pulso')}
+                        />
+                    </FormControl>
+                    <FormControl w='70%' mb={10} display={"flex"} flexDirection={"column"}>
+                        <FormLabel display={"flex"}>Presion Arterial</FormLabel>
+                        <Input
+                        type="text"
+                        placeholder='ingresa tu email'                    
+                        backgroundColor='white'
+
+                        {...register('PArterial')}
+                        />
+                    </FormControl>
+                    <FormControl w='70%' mb={10} display={"flex"} flexDirection={"column"}>
                         <FormLabel display={"flex"}>Tipo de Pie</FormLabel>
-                        <Select backgroundColor='white' placeholder='Select option'>
+                        <Select backgroundColor='white' placeholder='Select option' {...register('TPie')} mt={-5}>
                             <option value='Normal'>Normal</option>
                             <option value='Cavo'>Cavo</option>
                             <option value='Plano'>Plano</option>
                         </Select>
                     </FormControl>
-                    <FormControl w='70%' mb={25} display={"flex"} >
+                    <FormControl w='70%' mb={10} display={"flex"} flexDirection={"column"}>
                         <FormLabel display={"flex"}>Plantigrafia</FormLabel>
                         <Input
                         type="text"
@@ -240,18 +252,18 @@ return (
                     </FormControl>
             <ButtonGroup>
                 <Button mt={10} colorScheme='teal' type='submit' onClick={()=> {
-                    const usuario = getValues()
-                    console.log(usuario);
-                    /*
-                    axios.post('http://localhost:8080/api/auth/createUser', usuario)
+                    const paciente = getValues()
+                    console.log(paciente);
+                    
+                    axios.post('http://localhost:8080/api/auth/createPatient', paciente)
                         .then(response => {
                             // Manejar la respuesta del servidor si es necesario
-                            console.log('Usuario creado:', response.data);
+                            console.log('Paciente creado:', response.data);
                         })
                         .catch(error => {
                             // Manejar cualquier error que pueda ocurrir durante la solicitud
                             console.error('Error al crear el usuario:', error);
-                        });*/
+                        });
                 }}>
                     Crear
                 </Button>

@@ -25,3 +25,12 @@ export const createUser = async (req, res) =>{
     console.log(result);
     res.send(result)
 }
+
+//crea un paciente
+export const createPatient = async (req, res) =>{
+    const patient = req.body
+    
+    //let result = await userModel.create(newUser)
+    console.log(patient);
+    //res.send(result)
+}
